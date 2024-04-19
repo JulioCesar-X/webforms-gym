@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="principal.master.cs" Inherits="webgym.principal" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header> <h1>Gym XPTO</h1></header>
+        <nav>
+            <ul>
+                <li><a href="Default.aspx">Home</a></li>
+                <li><a href="Clientes.aspx">Novo Cliente</a></li>
+                <li><a href="Aulas.aspx">Aulas</a></li>
+                <li><a href="imc.aspx">IMC</a></li>
+                <li><a href="tabela_gordura.aspx">Tabela de gordura</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </main>
+        <footer>
+            <h3>site desenvolvido por Julio Cesar</h3>
+        </footer>
+    </form>
+</body>
+</html>
