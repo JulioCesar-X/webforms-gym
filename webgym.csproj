@@ -71,13 +71,27 @@
     <Content Include="App_Data\gym_log.ldf">
       <DependentUpon>gym.mdf</DependentUpon>
     </Content>
+    <Content Include="aulas.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Images\gym.png" />
+    <Content Include="tabela.aspx" />
+    <Content Include="pessoas.aspx" />
     <Content Include="Web.config" />
+    <Content Include="index.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="aulas.aspx.cs">
+      <DependentUpon>aulas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aulas.aspx.designer.cs">
+      <DependentUpon>aulas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\TabelaGeral.cs" />
+    <Compile Include="Models\UsuarioModalidades.cs" />
     <Compile Include="principal.master.cs">
       <DependentUpon>principal.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -86,6 +100,27 @@
       <DependentUpon>principal.master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tabela.aspx.cs">
+      <DependentUpon>tabela.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tabela.aspx.designer.cs">
+      <DependentUpon>tabela.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pessoas.aspx.cs">
+      <DependentUpon>pessoas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pessoas.aspx.designer.cs">
+      <DependentUpon>pessoas.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -97,9 +132,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
