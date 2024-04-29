@@ -5,44 +5,50 @@
 <html>
 <head runat="server">
     <title>Gym</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3pVYMk22t4JSlCg+1T7RG9jQcMtpXjPiRm1Hfe9mU+5tRzizHpAj4pXmIl" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shc1JVa+U3a1FhMpF5fNfK3g8K/Us3wJ6WyR4" crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        <header> <h1>Gym XPTO</h1></header>
-        <nav>
-            <asp:Menu ID="Menu1" runat="server" BackColor="#F7F6F3" DynamicHorizontalOffset="2" Font-Bold="True" Font-Names="MV Boli" Font-Size="Medium" ForeColor="#7C6F57" Orientation="Horizontal" StaticSubMenuIndent="10px">
-                <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
-                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-                <DynamicMenuStyle BackColor="#F7F6F3" />
-                <DynamicSelectedStyle BackColor="#5D7B9D" />
-                <Items>
-                    <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/index.aspx"></asp:MenuItem>
-                    <asp:MenuItem Text="Cliente" Value="Novo Cliente" NavigateUrl="~/usuarios.aspx"></asp:MenuItem>
-                    <asp:MenuItem Text="Aulas" Value="Aulas" NavigateUrl="~/aulas.aspx"></asp:MenuItem>
-                    <asp:MenuItem Text="Tabela geral" Value="Tabela geral" NavigateUrl="~/tabela.aspx"></asp:MenuItem>
-                    <asp:MenuItem NavigateUrl="~/pessoas.aspx" Text="Pessoas" Value="Pessoas"></asp:MenuItem>
-                </Items>
-                <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
-                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-                <StaticSelectedStyle BackColor="#5D7B9D" />
-            </asp:Menu>
-            
+        <header> 
+            <div class="container">
+                <h1 class="text-center">Gym XPTO</h1>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <asp:Menu ID="Menu1" runat="server" BackColor="#F7F6F3" DynamicHorizontalOffset="2" Font-Bold="True" Font-Names="MV Boli" Font-Size="Medium" ForeColor="#7C6F57" Orientation="Horizontal" StaticSubMenuIndent="10px" CssClass="navbar-nav mr-auto">
+                    <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <DynamicMenuStyle BackColor="#F7F6F3" />
+                    <DynamicSelectedStyle BackColor="#5D7B9D" />
+                    <Items>
+                        <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/index.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Cliente" Value="Novo Cliente" NavigateUrl="~/pessoas.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Aulas" Value="Aulas" NavigateUrl="~/aulas.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Tabela geral" Value="Tabela geral" NavigateUrl="~/tabela.aspx"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/pessoas.aspx" Text="Pessoas" Value="Pessoas"></asp:MenuItem>
+                    </Items>
+                    <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <StaticSelectedStyle BackColor="#5D7B9D" />
+                </asp:Menu>
+            </div>
         </nav>
         <main>
-            <div>
+            <div class="container">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
         </main>
-        <footer>
-            <div class="text-center p-3">
-                © 2024 Copyright:
-                <a>Julio Pereira</a>
+        <footer class="footer mt-auto py-3">
+            <div class="container text-center">
+                <span class="text-muted">© 2024 Copyright: Julio Pereira</span>
             </div>
         </footer>
     </form>

@@ -3,29 +3,58 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="width: 100%; text-align: center; height: 790px;">
-        <h2>Criar Nova Pessoa</h2>
-        <div style="margin: auto; width: 50%;">
-            <asp:Label ID="LabelNome" runat="server" Text="Nome:" AssociatedControlID="txtNome"></asp:Label><br />
-            <asp:TextBox ID="txtNome" runat="server" CssClass="form-control" placeholder="Insira o nome..."></asp:TextBox><br />
-
-             <div style="display:flex; justify-content:center; align-items:center">
-                <asp:Label ID="LabelSexo" runat="server" Text="Sexo:"></asp:Label>
-                <asp:RadioButtonList ID="rblSexo" runat="server">
-                    <asp:ListItem Text="M" Value="M"></asp:ListItem>
-                    <asp:ListItem Text="F" Value="F"></asp:ListItem>
-                </asp:RadioButtonList>
-             </div>
-            <asp:Label ID="LabelEmail" runat="server" Text="Email:"></asp:Label><br />
-            <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Insira o email..."></asp:TextBox><br />
-
-            <asp:Label ID="LabelTelefone" runat="server" Text="Telefone:"></asp:Label><br />
-            <asp:TextBox ID="txtTelefone" runat="server" CssClass="form-control" placeholder="Insira o telefone..."></asp:TextBox><br />
-
-            <asp:Label ID="LabelDataNasc" runat="server" Text="Data de Nascimento:"></asp:Label><br />
-            <asp:TextBox ID="txtDataNasc" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox><br />
-
-            <asp:Button ID="btnEnviar" runat="server" Text="Enviar" OnClick="btnEnviar_Click" CssClass="btn btn-primary" />
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h2 class="mb-4 text-center">Formulário de Inscrição</h2>
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server"/>
+                <div class="form-group">
+                    <label for="txtNome">Nome:</label>
+                    <asp:TextBox ID="txtNome" CssClass="form-control" runat="server" />
+                    
+                </div>
+                <div class="form-group">
+                    <label for="ddlSexo">Sexo:</label>
+                    <asp:DropDownList ID="ddlSexo" CssClass="form-control" runat="server">
+                        <asp:ListItem Text="Selecionar" Value=""></asp:ListItem>
+                        <asp:ListItem Text="Masculino" Value="M"></asp:ListItem>
+                        <asp:ListItem Text="Feminino" Value="F"></asp:ListItem>
+                    </asp:DropDownList>
+                    
+                </div>
+                <div class="form-group">
+                    <label for="txtEmail">E-mail:</label>
+                    <asp:TextBox ID="txtEmail" CssClass="form-control" TextMode="Email" runat="server" />
+                    
+                    
+                </div>
+                <div class="form-group">
+                    <label for="txtTelefone">Telefone:</label>
+                    <asp:TextBox ID="txtTelefone" CssClass="form-control" runat="server" />
+                    
+                </div>
+                <div class="form-group">
+                    <label for="txtPeso">Peso (kg):</label>
+                    <asp:TextBox ID="txtPeso" CssClass="form-control" runat="server" />
+                    
+                </div>
+                <div class="form-group">
+                    <label for="txtAltura">Altura (m):</label>
+                    <asp:TextBox ID="txtAltura" CssClass="form-control" runat="server" />
+                    
+                </div>
+                <div class="form-group">
+                    <label for="txtDoencaOuPatologia">Doença ou Patologia:</label>
+                    <asp:TextBox ID="txtDoencaOuPatologia" CssClass="form-control" TextMode="MultiLine" runat="server" />
+                </div>
+                <div class="form-group form-check">
+                    <asp:CheckBox ID="chkToalha" CssClass="form-check-input" runat="server" />
+                    <label class="form-check-label" for="chkToalha">Necessita Toalha?</label>
+                </div>
+                <div class="form-group">
+                    <asp:Button ID="btnSubmit" CssClass="btn btn-primary" runat="server" Text="Inscrever" OnClick="btnSubmit_Click" />
+                </div>
+            </div>
         </div>
     </div>
 </asp:Content>

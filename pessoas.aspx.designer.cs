@@ -15,13 +15,13 @@ namespace webgym
     {
 
         /// <summary>
-        /// LabelNome control.
+        /// ValidationSummary1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNome;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
 
         /// <summary>
         /// txtNome control.
@@ -33,31 +33,31 @@ namespace webgym
         protected global::System.Web.UI.WebControls.TextBox txtNome;
 
         /// <summary>
-        /// LabelSexo control.
+        /// RequiredFieldValidatorNome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelSexo;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorNome;
 
         /// <summary>
-        /// rblSexo control.
+        /// ddlSexo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rblSexo;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSexo;
 
         /// <summary>
-        /// LabelEmail control.
+        /// RequiredFieldValidatorSexo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelEmail;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorSexo;
 
         /// <summary>
         /// txtEmail control.
@@ -69,13 +69,22 @@ namespace webgym
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
-        /// LabelTelefone control.
+        /// RegularExpressionValidatorEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelTelefone;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorEmail;
+
+        /// <summary>
+        /// RequiredFieldValidatorEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorEmail;
 
         /// <summary>
         /// txtTelefone control.
@@ -87,30 +96,57 @@ namespace webgym
         protected global::System.Web.UI.WebControls.TextBox txtTelefone;
 
         /// <summary>
-        /// LabelDataNasc control.
+        /// RegularExpressionValidatorTelefone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelDataNasc;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorTelefone;
 
         /// <summary>
-        /// txtDataNasc control.
+        /// txtPeso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDataNasc;
+        protected global::System.Web.UI.WebControls.TextBox txtPeso;
 
         /// <summary>
-        /// btnEnviar control.
+        /// txtAltura control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnviar;
+        protected global::System.Web.UI.WebControls.TextBox txtAltura;
+
+        /// <summary>
+        /// txtDoencaOuPatologia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDoencaOuPatologia;
+
+        /// <summary>
+        /// chkToalha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkToalha;
+
+        /// <summary>
+        /// btnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
     }
 }
