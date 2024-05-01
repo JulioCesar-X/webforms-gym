@@ -85,6 +85,7 @@
     <Content Include="pessoas.aspx" />
     <Content Include="Web.config" />
     <Content Include="index.aspx" />
+    <Content Include="cliente.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -121,6 +122,13 @@
     </Compile>
     <Compile Include="pessoas.aspx.designer.cs">
       <DependentUpon>pessoas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cliente.aspx.cs">
+      <DependentUpon>cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cliente.aspx.designer.cs">
+      <DependentUpon>cliente.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

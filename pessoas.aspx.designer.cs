@@ -33,15 +33,6 @@ namespace webgym
         protected global::System.Web.UI.WebControls.TextBox txtNome;
 
         /// <summary>
-        /// RequiredFieldValidatorNome control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorNome;
-
-        /// <summary>
         /// ddlSexo control.
         /// </summary>
         /// <remarks>
@@ -49,15 +40,6 @@ namespace webgym
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlSexo;
-
-        /// <summary>
-        /// RequiredFieldValidatorSexo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorSexo;
 
         /// <summary>
         /// txtEmail control.
@@ -69,24 +51,6 @@ namespace webgym
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
-        /// RegularExpressionValidatorEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorEmail;
-
-        /// <summary>
-        /// RequiredFieldValidatorEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorEmail;
-
-        /// <summary>
         /// txtTelefone control.
         /// </summary>
         /// <remarks>
@@ -94,15 +58,6 @@ namespace webgym
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTelefone;
-
-        /// <summary>
-        /// RegularExpressionValidatorTelefone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorTelefone;
 
         /// <summary>
         /// txtPeso control.
