@@ -82,14 +82,22 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Images\gym.png" />
+    <Content Include="imc.aspx" />
     <Content Include="pessoas.aspx" />
     <Content Include="Web.config" />
     <Content Include="index.aspx" />
-    <Content Include="cliente.aspx" />
+    <Content Include="login.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="imc.aspx.cs">
+      <DependentUpon>imc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="imc.aspx.designer.cs">
+      <DependentUpon>imc.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Aula.cs" />
     <Compile Include="Models\Frequencia.cs" />
@@ -123,12 +131,12 @@
     <Compile Include="pessoas.aspx.designer.cs">
       <DependentUpon>pessoas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="cliente.aspx.cs">
-      <DependentUpon>cliente.aspx</DependentUpon>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="cliente.aspx.designer.cs">
-      <DependentUpon>cliente.aspx</DependentUpon>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

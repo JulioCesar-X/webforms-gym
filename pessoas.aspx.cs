@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 using webgym.Models;
 
 namespace webgym
@@ -11,7 +14,7 @@ namespace webgym
         {
             if (!IsPostBack)
             {
-                // Cria a conexão com o banco de dados usando a string de conexão do Web.config
+
                 string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
@@ -32,53 +35,58 @@ namespace webgym
             bool toalha = chkToalha.Checked;
             string doencaOuPatologia = txtDoencaOuPatologia.Text;
 
-            // Calcular IMC
+
             float imc = peso / (altura * altura);
 
-            InserirDadosNoBanco(nome, sexo, email, telefone, peso, altura, toalha, doencaOuPatologia, imc);
+
+            int valorBase = 10;
+            int valorTotal = valorBase;
+
+            if (chkPT.Checked)
+                valorTotal += 10;
+
+            int diasSelecionados = ddlDias.Items.Cast<ListItem>().Count(li => li.Selected);
+            if (diasSelecionados > 4)
+                valorTotal += 5;
+
+            int modalidadesSelecionadas = ddlModalidades.Items.Cast<ListItem>().Count(li => li.Selected);
+            if (modalidadesSelecionadas > 1)
+                valorTotal += (modalidadesSelecionadas - 1) * 5;
+
+            InserirDadosNoBanco(nome, sexo, email, telefone, peso, altura, toalha, doencaOuPatologia, imc, valorTotal);
 
         }
 
-        private void InserirDadosNoBanco(string nome, string sexo, string email, string telefone, float peso, float altura, bool toalha, string doencaOuPatologia, float imc)
+        private void InserirDadosNoBanco(string nome, string sexo, string email, string telefone, float peso, float altura, bool toalha, string doencaOuPatologia, float imc, int valorTotal)
         {
-            // Criar uma conexão usando a string de conexão do Web.config
             string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                // Abrir a conexão
                 con.Open();
+                string query = "INSERT INTO Pessoa (Nome, Sexo, Email, Telefone, Peso, Altura, IMC, DoencaOuPatologia, Toalha) VALUES (@Nome, @Sexo, @Email, @Telefone, @Peso, @Altura, @IMC, @DoencaOuPatologia, @Toalha)";
 
-                // Comando SQL para inserir os dados na tabela
-                string query = "INSERT INTO Pessoa (Nome, Sexo, Email, Telefone, Peso, Altura,IMC, DoencaOuPatologia, Toalha) VALUES (@Nome, @Sexo, @Email, @Telefone, @Peso, @Altura,@imc, @DoencaOuPatologia, @Toalha)";
-
-                // Criar um objeto SqlCommand
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    // Adicionar parâmetros ao comando SQL
                     cmd.Parameters.AddWithValue("@Nome", nome);
                     cmd.Parameters.AddWithValue("@Sexo", sexo);
                     cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@Telefone", telefone);
                     cmd.Parameters.AddWithValue("@Peso", peso);
                     cmd.Parameters.AddWithValue("@Altura", altura);
-                    cmd.Parameters.AddWithValue("@imc", imc);
+                    cmd.Parameters.AddWithValue("@IMC", imc);
                     cmd.Parameters.AddWithValue("@DoencaOuPatologia", doencaOuPatologia);
                     cmd.Parameters.AddWithValue("@Toalha", toalha);
 
-                    // Executar o comando SQL
                     int rowsAffected = cmd.ExecuteNonQuery();
 
-                    // Verificar se a inserção foi bem-sucedida
                     if (rowsAffected > 0)
                     {
-                        // Inserção bem-sucedida
-                        Response.Write("<script>alert('Inscrição realizada com sucesso!');</script>");
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Inscrição realizada com sucesso! Valor total a pagar: €" + valorTotal + "');", true);
                         LimparCampos();
                     }
                     else
                     {
-                        // Inserção falhou
                         Response.Write("<script>alert('Falha ao realizar a inscrição!');</script>");
                     }
                 }
@@ -92,25 +100,24 @@ namespace webgym
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                // Abrir a conexão
+
                 con.Open();
 
-                // Comando SQL para selecionar os dados da tabela Pessoa
+
                 string query = "SELECT * FROM Pessoa";
 
-                // Criar um objeto SqlCommand
+
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    // Executar o comando SQL e obter um leitor de dados
+
                     SqlDataReader reader = cmd.ExecuteReader();
 
-                    // Verificar se há linhas retornadas
+
                     if (reader.HasRows)
                     {
-                        // Ler os dados da primeira linha
+
                         reader.Read();
 
-                        // Criar um objeto Pessoa e atribuir os dados a ele
                         Pessoa pessoa = new Pessoa
                         {
                             PessoaId = Convert.ToInt32(reader["PessoaId"]),
@@ -127,7 +134,7 @@ namespace webgym
 
 
                     }
-                    // Fechar o leitor de dados
+
                     reader.Close();
                 }
             }

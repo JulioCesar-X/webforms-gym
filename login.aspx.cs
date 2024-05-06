@@ -19,8 +19,7 @@ namespace webgym
             if (username == "usuario" && password == "senha")
             {
                 // Autenticação bem-sucedida
-                // Redirecionar para a página de perfil, por exemplo
-                Response.Redirect("~/perfil.aspx");
+                Response.Redirect("~/index.aspx");
             }
             else
             {

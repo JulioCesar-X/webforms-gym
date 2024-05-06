@@ -29,11 +29,8 @@
                     <DynamicSelectedStyle BackColor="#5D7B9D" />
                     <Items>
                         <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/index.aspx"></asp:MenuItem>
-                        <asp:MenuItem Text="Cliente" Value="Novo Cliente"></asp:MenuItem>
-                        <asp:MenuItem Text="Aulas" Value="Aulas" NavigateUrl="~/aulas.aspx"></asp:MenuItem>
-                        <asp:MenuItem Text="Tabela geral" Value="Tabela geral" NavigateUrl="~/tabela.aspx"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/pessoas.aspx" Text="Pessoas" Value="Pessoas"></asp:MenuItem>
-                        <asp:MenuItem Text="IMC" Value="IMC"></asp:MenuItem>
+                        <asp:MenuItem Text="IMC" Value="IMC" NavigateUrl="~/imc.aspx"></asp:MenuItem>
                     </Items>
                     <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
                     <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
